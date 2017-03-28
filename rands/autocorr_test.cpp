@@ -38,6 +38,7 @@ float pil(vector<float> v){
 
 
 int main(int argc, char* argv[]){
+    cout << "./corr i l\n";
   i = (argc > 1)? atoi(argv[1]) : 3;
   l = (argc > 2)? atoi(argv[2]) : 5;
   r_file.open("floats.csv", ifstream::in);
