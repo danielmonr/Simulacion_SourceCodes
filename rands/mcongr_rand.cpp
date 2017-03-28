@@ -70,6 +70,9 @@ int main(int argc, char* argv[]){
   w_file.open("numbers.csv", ofstream::out | ofstream::trunc);
   w_file << "it, number\n";
   w_file << "0, " << root << "\n";
+  ofstream f_file;
+  f_file.open("floats.csv", ofstream::out | ofstream::trunc);
+  f_file << "it,number\n";
 
   int cont = 1;
   unsigned long temp = root;
@@ -79,6 +82,7 @@ int main(int argc, char* argv[]){
     temp = operation(temp);
     found = search(temp);
     w_file << cont << ", " << temp << '\n';
+    f_file << cont << "," << ((float)temp) / ((float)mod) << "\n";
     cont++;
   }
 

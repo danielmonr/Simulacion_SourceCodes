@@ -14,7 +14,7 @@ vector<float> floatFile(){
   string line;
   getline(r_file, line);
   while (getline(r_file, line)){
-    vf.push_back(stof(line.substr(line.find(", ")+2)));
+    vf.push_back(stof(line.substr(line.find(",")+1)));
   }
   return vf;
 }
@@ -30,10 +30,9 @@ vector<long> longFile(){
 }
 
 int main(int argc, char* argv[]){
-  file = (argc>1)? string(argv[1]) : "numbers.csv";
+  file = (argc>1)? string(argv[1]) : "floats.csv";
   r_file.open(file, ifstream::in);
   vector<float> v = floatFile();
-  //sort(v.begin(), v.end());
   Test<float>::test(v);
   return 0;
 }
