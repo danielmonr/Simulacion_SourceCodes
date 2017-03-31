@@ -1,8 +1,8 @@
-ALL: corr kstest mult sqr poisson
+ALL: corr kstest mult sqr poisson expo triang
 .PHONY=clean
 
 clean:
-	\rm -f corr kstest mult sqr poisson
+	\rm -f corr kstest mult sqr poisson expo
 
 corr: autocorr_test.cpp
 	g++ --std=c++11 autocorr_test.cpp -o corr
@@ -18,3 +18,9 @@ sqr: sqr_rand.cpp
 
 poisson: va_poisson.cpp
 	g++ --std=c++11 va_poisson.cpp -o poisson
+
+expo: exponential.cpp
+	g++ --std=c++11 exponential.cpp -o expo
+
+triang: triangular.cpp
+	g++ --std=c++11 triangular.cpp -o triang
